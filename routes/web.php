@@ -9,7 +9,8 @@ foreach (config('tenancy.central_domains') as $domain) {
             return response()->json(['success'=>true,'data'=>'health']);
         });
         Route::get('/', function () {
-            dd(\App\Models\User::all());
+            return response()->json(\App\Models\User::all());
+            // dd(\App\Models\User::all());
             return view('welcome');
         });
         // Route::get('tenant/create',[TenantController::class,'create']);
