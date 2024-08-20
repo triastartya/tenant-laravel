@@ -3,15 +3,15 @@ services:
     image: triastartya/tenant-laravel:latest
     environment:
       - "DB_HOST=203.194.112.71"
-      - "DB_PORT=5431"
+      - "DB_PORT=5441"
       - "DB_DATABASE=gracis"
       - "DB_USERNAME=trias"
       - "DB_PASSOWRD=bismillah"
     ports:
       - "8080:8000"
     networks:
-      - dbretail-network
-      - dbreport-network
+      - dbgracis-network
+      - dbreport-gracis-network
     deploy:
       mode: replicated
       replicas: 1
@@ -38,7 +38,7 @@ services:
       timeout: 10s
 
 networks:
-  dbretail-network:
+  dbgracis-network:
     external: true
-  dbreport-network:
+  dbreport-gracis-network:
     external: true
